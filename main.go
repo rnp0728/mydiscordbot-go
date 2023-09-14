@@ -25,6 +25,10 @@ func getDiscordSession() *discordgo.Session {
 }
 
 func reply(sess *discordgo.Session){
+
+	sess.AddHandler(func(s *discordgo.Session, r *discordgo.MessageReactionAdd){
+		// todo
+	})
 	sess.AddHandler(func(s *discordgo.Session, m *discordgo.MessageCreate) {
 		if m.Author.ID == s.State.User.ID {
 			return
